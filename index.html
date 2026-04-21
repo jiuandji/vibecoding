@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaibcoding — портфолио лендингов</title>
+  <meta name="description" content="Четыре учебных лендинга с возрастающей сложностью: от Canvas-анимаций до 3D на Three.js." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0f;
+      --surface: #14141c;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #e8eaf0;
+      --dim: #8892b0;
+      --accent: #6b5cff;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(107, 92, 255, 0.1), transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(255, 77, 143, 0.05), transparent 50%);
+    }
+    .mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; }
+    .container {
+      max-width: 1100px;
+      margin-inline: auto;
+      padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 2rem);
+    }
+    .hero {
+      padding-block: clamp(3rem, 8vw, 6rem) clamp(3rem, 6vw, 5rem);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+    .hero__tag {
+      color: var(--accent);
+      font-size: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.25rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin: 0 0 1.5rem;
+      max-width: 16ch;
+    }
+    .hero p {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      max-width: 60ch;
+      color: var(--dim);
+      margin: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--card-color, var(--accent)), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+    .card:hover {
+      border-color: var(--card-color, var(--accent));
+      transform: translateY(-4px);
+      box-shadow: 0 0 32px rgba(107, 92, 255, 0.15);
+    }
+    .card:hover::before { opacity: 0.05; }
+    .card__num {
+      font-size: 0.75rem;
+      color: var(--dim);
+      margin-bottom: 1rem;
+    }
+    .card__emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+    .card__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.5rem;
+    }
+    .card__subtitle {
+      font-size: 0.875rem;
+      color: var(--dim);
+      margin: 0 0 1.5rem;
+    }
+    .card__desc {
+      font-size: 0.9375rem;
+      color: var(--dim);
+      margin: 0 0 1.5rem;
+      flex-grow: 1;
+    }
+    .card__meta {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 0.6875rem;
+      color: var(--dim);
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .card__meta span::before { content: '· '; opacity: 0.4; margin-right: 0.25rem; }
+    .card__meta span:first-child::before { content: ''; margin: 0; }
+    .card__arrow {
+      align-self: flex-end;
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      transition: transform 0.3s;
+      color: var(--card-color, var(--accent));
+    }
+    .card:hover .card__arrow { transform: translateX(4px); }
+
+    .card--1 { --card-color: #ffb7c5; }
+    .card--2 { --card-color: #e07a5f; }
+    .card--3 { --card-color: #c5a059; }
+    .card--4 { --card-color: #6b5cff; }
+
+    footer {
+      margin-top: clamp(3rem, 6vw, 5rem);
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8125rem;
+      color: var(--dim);
+    }
+    footer a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+    footer a:hover { border-color: var(--accent); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="hero__tag mono">Portfolio · 2026</div>
+      <h1>Четыре лендинга, четыре эстетики.</h1>
+      <p>
+        Учебный проект по веб-разработке. От светлой кофейни с Canvas-лепестками
+        до глубококосмического архива на Three.js — прогрессия по возрастающей сложности.
+      </p>
+    </header>
+
+    <section class="grid">
+      <a class="card card--1" href="practice-1/">
+        <div class="card__num mono">01</div>
+        <div class="card__emoji">🌸</div>
+        <h2 class="card__title">Barista Loco</h2>
+        <p class="card__subtitle">Кофейня · Мадрид · сакура</p>
+        <p class="card__desc">
+          Светлая тема, Canvas-анимация лепестков, карусель галереи, форма бронирования.
+        </p>
+        <div class="card__meta mono">
+          <span>HTML/CSS/JS</span>
+          <span>Canvas 2D</span>
+          <span>1608 lines</span>
+        </div>
+        <div class="card__arrow">→</div>
+      </a>
+
+      <a class="card card--2" href="practice-2/">
+        <div class="card__num mono">02</div>
+        <div class="card__emoji">🍕</div>
+        <h2 class="card__title">Pizza Fuoco</h2>
+        <p class="card__subtitle">Пиццерия · огненная тема</p>
+        <p class="card__desc">
+          Тёмный дизайн, Canvas-огоньки через ООП-класс Ember, hover overlay в галерее.
+        </p>
+        <div class="card__meta mono">
+          <span>HTML/CSS/JS</span>
+          <span>ООП</span>
+          <span>931 lines</span>
+        </div>
+        <div class="card__arrow">→</div>
+      </a>
+
+      <a class="card card--3" href="practice-3/">
+        <div class="card__num mono">03</div>
+        <div class="card__emoji">⌚</div>
+        <h2 class="card__title">Chronos Luxe</h2>
+        <p class="card__subtitle">Часовой бренд · OLED Luxury</p>
+        <p class="card__desc">
+          GSAP-анимации, Text Scramble, magnetic buttons, кастомный курсор, film grain.
+        </p>
+        <div class="card__meta mono">
+          <span>GSAP</span>
+          <span>ООП (5)</span>
+          <span>1857 lines</span>
+        </div>
+        <div class="card__arrow">→</div>
+      </a>
+
+      <a class="card card--4" href="practice-4/">
+        <div class="card__num mono">04</div>
+        <div class="card__emoji">🌌</div>
+        <h2 class="card__title">Cosmos Archive</h2>
+        <p class="card__subtitle">Архив миссий · Deep Space</p>
+        <p class="card__desc">
+          Three.js starfield, 3D-модели в карточках, scroll-driven timeline, 11 классов.
+        </p>
+        <div class="card__meta mono">
+          <span>Three.js</span>
+          <span>GSAP</span>
+          <span>1940 lines</span>
+        </div>
+        <div class="card__arrow">→</div>
+      </a>
+    </section>
+
+    <footer>
+      <div>
+        <span class="mono">Vaibcoding</span> · четыре лендинга · vanilla stack
+      </div>
+      <div>
+        <a href="https://github.com/jiuandji/vibecoding">GitHub →</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
