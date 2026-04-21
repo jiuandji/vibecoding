@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Luxe | Time as an Art</title>
+    <meta name="description" content="Chronos Luxe — masterpieces of mechanical precision for the modern era. Premium luxury timepieces crafted with obsessive attention to detail.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-logo">CHRONOS <span class="gold">LUXE</span></div>
+    </div>
+
+    <!-- Film Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">CHRONOS <span class="gold">LUXE</span></a>
+            <ul class="nav-links">
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#craft">Craft</a></li>
+                <li><a href="#heritage">Heritage</a></li>
+                <li><a href="#inquiry">Inquire</a></li>
+            </ul>
+            <div class="magnetic-wrap">
+                <button class="btn-primary magnetic-btn" id="nav-contact" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Inquire</button>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#collection">Collection</a>
+        <a href="#craft">Craft</a>
+        <a href="#heritage">Heritage</a>
+        <a href="#inquiry">Inquire</a>
+    </div>
+
+    <main>
+        <!-- ═══ HERO ═══ -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1 id="hero-title" data-value="TIME IS AN ART">TIME IS AN ART</h1>
+                <p class="hero-subtitle">Masterpieces of mechanical precision, crafted for those who understand that true luxury lives in the details.</p>
+                <div class="magnetic-wrap">
+                    <button class="btn-gold magnetic-btn" id="hero-cta" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
+                        <span>Explore Collection</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="image-overlay"></div>
+                <img src="watch-hero.png" alt="Chronos Luxe Premium Timepiece">
+            </div>
+        </section>
+
+        <!-- ═══ COLLECTION ═══ -->
+        <section class="collection" id="collection">
+            <div class="section-header reveal">
+                <span class="section-label">The Collection</span>
+                <h2 class="section-title">Exceptional Timepieces</h2>
+                <p class="section-desc">Each watch is a declaration of intent — a fusion of centuries-old craftsmanship and forward-thinking design.</p>
+            </div>
+
+            <div class="collection-grid">
+                <div class="collection-card reveal reveal-delay-1">
+                    <div class="card-image">
+                        <img src="gallery/watch-elegance.png" alt="Chronos Elegance" loading="lazy">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name">Elegance</h3>
+                        <p class="card-ref">REF. CL-E001</p>
+                        <p class="card-price">€ 12,800</p>
+                    </div>
+                </div>
+
+                <div class="collection-card reveal reveal-delay-2">
+                    <div class="card-image">
+                        <img src="gallery/watch-diver.png" alt="Chronos Abyss Diver" loading="lazy">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name">Abyss Diver</h3>
+                        <p class="card-ref">REF. CL-D002</p>
+                        <p class="card-price">€ 18,500</p>
+                    </div>
+                </div>
+
+                <div class="collection-card reveal reveal-delay-3">
+                    <div class="card-image">
+                        <img src="gallery/watch-skeleton.png" alt="Chronos Skeleton Tourbillon" loading="lazy">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name">Skeleton Tourbillon</h3>
+                        <p class="card-ref">REF. CL-T003</p>
+                        <p class="card-price">€ 45,000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ CRAFT ═══ -->
+        <section class="craft" id="craft">
+            <div class="craft-content">
+                <div class="craft-text">
+                    <span class="section-label">The Craft</span>
+                    <h2 class="section-title">Obsessive Precision</h2>
+                    <p class="craft-description reveal">
+                        Every Chronos Luxe timepiece is assembled by hand in our atelier in the Swiss Jura Valley. 
+                        Our master watchmakers spend over 400 hours on each movement, polishing every surface 
+                        and adjusting every gear to tolerances measured in microns.
+                    </p>
+                    <p class="craft-description reveal">
+                        We source only the finest materials — 18k gold from ethical mines, 
+                        sapphire crystal grown in our own laboratories, and leather from heritage tanneries 
+                        that have been perfecting their craft for generations.
+                    </p>
+                    <div class="craft-stats reveal">
+                        <div class="stat-item">
+                            <span class="stat-number">412</span>
+                            <span class="stat-label">Hours per piece</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">347</span>
+                            <span class="stat-label">Components</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0.01</span>
+                            <span class="stat-label">mm tolerance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="craft-image reveal">
+                    <img src="watch-hero.png" alt="Chronos Luxe Craftsmanship" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ HERITAGE ═══ -->
+        <section class="heritage" id="heritage">
+            <div class="heritage-content reveal">
+                <span class="section-label">Heritage</span>
+                <h2 class="section-title">A Legacy of Excellence</h2>
+                <div class="gold-line" style="margin: 24px auto 48px;"></div>
+                <blockquote class="heritage-quote">
+                    We do not simply measure time — we elevate it into an experience, 
+                    a conversation between the artisan's hand and the wearer's wrist.
+                </blockquote>
+                <p class="heritage-author">Henri-Claude Fontaine</p>
+                <p class="heritage-role">Master Watchmaker, Founder</p>
+            </div>
+
+            <div class="heritage-timeline reveal">
+                <div class="timeline-item">
+                    <span class="timeline-year">1987</span>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-text">Founded in the Swiss Jura Valley by Henri-Claude Fontaine</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2001</span>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-text">First in-house tourbillon movement unveiled at Baselworld</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2015</span>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-text">Awarded Grand Prix d'Horlogerie de Genève</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026</span>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-text">Skeleton Tourbillon — our most complex creation yet</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ INQUIRY ═══ -->
+        <section class="inquiry" id="inquiry">
+            <div class="inquiry-content">
+                <span class="section-label">Private Inquiry</span>
+                <h2 class="section-title">Begin Your Journey</h2>
+                <p class="section-desc">
+                    Each Chronos Luxe timepiece is made to order. 
+                    Share your preferences, and our concierge will guide you 
+                    through the selection process.
+                </p>
+
+                <form class="inquiry-form" id="inquiry-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-name">Full Name</label>
+                            <input type="text" id="client-name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client-email">Email</label>
+                            <input type="email" id="client-email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-interest">Collection of Interest</label>
+                        <select id="client-interest" name="interest">
+                            <option value="">Select a collection...</option>
+                            <option value="elegance">Elegance — Dress Watch</option>
+                            <option value="abyss">Abyss Diver — Sport</option>
+                            <option value="skeleton">Skeleton Tourbillon — Haute Horlogerie</option>
+                            <option value="bespoke">Bespoke Commission</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-message">Message</label>
+                        <textarea id="client-message" name="message" placeholder="Tell us about your preferences..."></textarea>
+                    </div>
+                    <div class="form-submit magnetic-wrap">
+                        <button type="submit" class="btn-gold magnetic-btn" id="submit-btn">
+                            <span>Send Inquiry</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="form-success" id="form-success">
+                    <div class="form-success-icon">✦</div>
+                    <h3>Inquiry Received</h3>
+                    <p>Our concierge will contact you within 24 hours.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand">CHRONOS <span class="gold">LUXE</span></div>
+                <p class="footer-tagline">Masterpieces of mechanical precision for the modern era. Swiss-made since 1987.</p>
+            </div>
+            <div>
+                <h4 class="footer-heading">Explore</h4>
+                <div class="footer-links">
+                    <a href="#collection">Collection</a>
+                    <a href="#craft">Craftsmanship</a>
+                    <a href="#heritage">Heritage</a>
+                    <a href="#inquiry">Private Inquiry</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Visit</h4>
+                <div class="footer-links">
+                    <a href="#">Zurich Boutique</a>
+                    <a href="#">Geneva Atelier</a>
+                    <a href="#">Paris Showroom</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-links">
+                    <a href="mailto:concierge@chronosluxe.ch">concierge@chronosluxe.ch</a>
+                    <a href="tel:+41227001987">+41 22 700 19 87</a>
+                    <a href="#">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2026 Chronos Luxe · Swiss Made · Precision & Elegance</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="LinkedIn">IN</a>
+                <a href="#" aria-label="YouTube">YT</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

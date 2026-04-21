@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmos Archive — Mission Records & Deep Space Logs</title>
+  <meta name="description" content="Иммерсивный архив космических миссий от Voyager IV до Deep Space Observers. Explore the chronicle of humanity's journey through the void." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cosmos Archive" />
+  <meta property="og:description" content="Архив космических миссий человечества, 1957–2150." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__pulse"></div>
+    <div class="loader__text mono">INITIALIZING TRANSMISSION</div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__ring"></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- Film Grain -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo" data-cursor="hover">
+        <span class="nav__logo-dot"></span>
+        <span>COSMOS<strong>ARCHIVE</strong></span>
+      </a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="#missions" class="mono" data-cursor="hover">Missions</a>
+        <a href="#timeline" class="mono" data-cursor="hover">Timeline</a>
+        <a href="#data" class="mono" data-cursor="hover">Records</a>
+        <a href="#launch" class="mono" data-cursor="hover">Launch</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">×</button>
+    <nav class="mobile-menu__links">
+      <a href="#missions">Missions</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#data">Records</a>
+      <a href="#launch">Launch</a>
+    </nav>
+    <div class="mobile-menu__coords mono">
+      LAT 40.7128° N · LON 74.0060° W · SIGNAL 437.800 MHz
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="starfield"></canvas>
+      <div class="hero__fallback" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <div class="hero__badge mono reveal">
+          <span class="hero__badge-dot"></span>
+          ARCHIVE ACTIVE · 2150.04.21
+        </div>
+        <h1 class="hero__title reveal" data-scramble>Chronicles of the Void</h1>
+        <p class="hero__lede reveal">
+          Открытый архив межзвёздных миссий, деепkосмической аппаратуры
+          и сигналов, прошедших через антенны планеты за сто девяносто три года.
+        </p>
+        <div class="hero__cta reveal">
+          <a href="#missions" class="btn btn--primary" data-magnetic data-cursor="hover">
+            Enter Archive
+          </a>
+          <a href="#launch" class="btn btn--ghost" data-cursor="hover">
+            Submit Record
+          </a>
+        </div>
+        <div class="hero__meta mono reveal">
+          <span>EST. 1957</span>
+          <span class="hero__meta-sep">·</span>
+          <span>412 MISSIONS CATALOGED</span>
+          <span class="hero__meta-sep">·</span>
+          <span>28 WORLDS</span>
+        </div>
+      </div>
+      <div class="hero__scroll mono" aria-hidden="true">
+        <span>SCROLL</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- Missions -->
+    <section class="missions" id="missions">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-head__tag mono">01 · MISSION ARCHIVE</div>
+          <h2 class="section-head__title">Селекция из четырёхсот.</h2>
+          <p class="section-head__lede">
+            Шесть записей, отобранных архивистами за научный вклад, дальность и
+            выживаемость в условиях, для которых аппарат не был спроектирован.
+          </p>
+        </div>
+
+        <div class="missions__grid">
+          <!-- Mission 1 -->
+          <article class="mission" data-mission="voyager-iv" data-cursor="hover">
+            <div class="mission__visual">
+              <canvas class="mission__canvas"></canvas>
+            </div>
+            <div class="mission__body">
+              <div class="mission__tag mono">INTERSTELLAR</div>
+              <h3 class="mission__title">Voyager IV</h3>
+              <div class="mission__meta mono">
+                <span>2089</span><span>·</span><span>ACTIVE</span>
+              </div>
+              <p class="mission__desc">
+                Четвёртая экспедиция в межзвёздное пространство. Прошла гелиопаузу в 2127,
+                продолжает передавать на 437.800 MHz.
+              </p>
+            </div>
+          </article>
+
+          <!-- Mission 2 -->
+          <article class="mission" data-mission="europa-clipper" data-cursor="hover">
+            <div class="mission__visual">
+              <canvas class="mission__canvas"></canvas>
+            </div>
+            <div class="mission__body">
+              <div class="mission__tag mono">OCEAN WORLDS</div>
+              <h3 class="mission__title">Europa Clipper</h3>
+              <div class="mission__meta mono">
+                <span>2024</span><span>·</span><span>ARCHIVED</span>
+              </div>
+              <p class="mission__desc">
+                Первое близкое исследование льдяной поверхности Европы.
+                47 пролётов, подтверждение жидкого океана под коркой.
+              </p>
+            </div>
+          </article>
+
+          <!-- Mission 3 -->
+          <article class="mission" data-mission="helios-9" data-cursor="hover">
+            <div class="mission__visual">
+              <canvas class="mission__canvas"></canvas>
+            </div>
+            <div class="mission__body">
+              <div class="mission__tag mono">SOLAR</div>
+              <h3 class="mission__title">Helios-9</h3>
+              <div class="mission__meta mono">
+                <span>2145</span><span>·</span><span>ACTIVE</span>
+              </div>
+              <p class="mission__desc">
+                Солнечный зонд девятого поколения. Минимум сближения — 4 миллиона
+                километров от фотосферы. Теплоизоляция из иридиевого композита.
+              </p>
+            </div>
+          </article>
+
+          <!-- Mission 4 -->
+          <article class="mission" data-mission="ark-station" data-cursor="hover">
+            <div class="mission__visual">
+              <canvas class="mission__canvas"></canvas>
+            </div>
+            <div class="mission__body">
+              <div class="mission__tag mono">MARS</div>
+              <h3 class="mission__title">Ark Station</h3>
+              <div class="mission__meta mono">
+                <span>2076</span><span>·</span><span>OPERATIONAL</span>
+              </div>
+              <p class="mission__desc">
+                Первая постоянная исследовательская база в кратере Езеро.
+                Экипаж 18 человек, ротация каждые 26 месяцев.
+              </p>
+            </div>
+          </article>
+
+          <!-- Mission 5 -->
+          <article class="mission" data-mission="skyhook" data-cursor="hover">
+            <div class="mission__visual">
+              <canvas class="mission__canvas"></canvas>
+            </div>
+            <div class="mission__body">
+              <div class="mission__tag mono">ASTEROID BELT</div>
+              <h3 class="mission__title">Skyhook</h3>
+              <div class="mission__meta mono">
+                <span>2103</span><span>·</span><span>OPERATIONAL</span>
+              </div>
+              <p class="mission__desc">
+                Автоматическая добывающая платформа на Цере. Обеспечивает редкоземельным
+                материалом внешние колонии.
+              </p>
+            </div>
+          </article>
+
+          <!-- Mission 6 -->
+          <article class="mission" data-mission="nightshade" data-cursor="hover">
+            <div class="mission__visual">
+              <canvas class="mission__canvas"></canvas>
+            </div>
+            <div class="mission__body">
+              <div class="mission__tag mono">OBSERVATION</div>
+              <h3 class="mission__title">Nightshade</h3>
+              <div class="mission__meta mono">
+                <span>2150</span><span>·</span><span>LAUNCHING</span>
+              </div>
+              <p class="mission__desc">
+                Крупнейшая оптическая обсерватория, развёрнутая в точке Лагранжа L2.
+                Первые снимки ожидаются в 2152.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline" id="timeline">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-head__tag mono">02 · TIMELINE</div>
+          <h2 class="section-head__title">Сто девяносто три года.</h2>
+          <p class="section-head__lede">
+            От первого искусственного спутника до автономной обсерватории на L2.
+            Движение по ленте времени синхронизировано со скроллом.
+          </p>
+        </div>
+
+        <div class="timeline__track">
+          <div class="timeline__line"></div>
+          <div class="timeline__progress" id="timelineProgress"></div>
+
+          <div class="timeline__point" data-year="1957">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Sputnik-1</div>
+            <div class="timeline__year mono">1957</div>
+          </div>
+          <div class="timeline__point" data-year="1989">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Voyager 2 · Neptune</div>
+            <div class="timeline__year mono">1989</div>
+          </div>
+          <div class="timeline__point" data-year="2024">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Europa Clipper</div>
+            <div class="timeline__year mono">2024</div>
+          </div>
+          <div class="timeline__point" data-year="2076">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Ark Station</div>
+            <div class="timeline__year mono">2076</div>
+          </div>
+          <div class="timeline__point" data-year="2103">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Skyhook · Ceres</div>
+            <div class="timeline__year mono">2103</div>
+          </div>
+          <div class="timeline__point" data-year="2150">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Nightshade · L2</div>
+            <div class="timeline__year mono">2150</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Wall -->
+    <section class="data" id="data">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-head__tag mono">03 · RECORDS</div>
+          <h2 class="section-head__title">Данные в цифрах.</h2>
+        </div>
+
+        <div class="data__grid">
+          <div class="data-card reveal">
+            <div class="data-card__value mono" data-counter="412">0</div>
+            <div class="data-card__unit mono">Missions</div>
+            <div class="data-card__label">Каталогизированных экспедиций с момента основания архива</div>
+          </div>
+          <div class="data-card reveal">
+            <div class="data-card__value mono" data-counter="347">0</div>
+            <div class="data-card__unit mono">Lightyears</div>
+            <div class="data-card__label">Суммарная дистанция, пройденная автоматическими зондами</div>
+          </div>
+          <div class="data-card reveal">
+            <div class="data-card__value mono" data-counter="28">0</div>
+            <div class="data-card__unit mono">Worlds</div>
+            <div class="data-card__label">Планет и малых тел с подтверждённым контактом</div>
+          </div>
+          <div class="data-card reveal">
+            <div class="data-card__value mono" data-counter="99" data-suffix=".2%">0</div>
+            <div class="data-card__unit mono">Uptime</div>
+            <div class="data-card__label">Средняя доступность сигнала в глубококосмической сети</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Launch Control -->
+    <section class="launch" id="launch">
+      <div class="container launch__inner">
+        <div class="section-head reveal">
+          <div class="section-head__tag mono">04 · LAUNCH CONTROL</div>
+          <h2 class="section-head__title">Подать запись в архив.</h2>
+          <p class="section-head__lede">
+            Предложите миссию, теорию или наблюдение. Каждая заявка рассматривается
+            совместно с научным комитетом архива.
+          </p>
+        </div>
+
+        <form class="form" id="form" novalidate>
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label mono">Full Name</span>
+              <input type="text" name="name" class="field__input" required minlength="2" />
+              <span class="field__error mono"></span>
+            </label>
+            <label class="field">
+              <span class="field__label mono">Email</span>
+              <input type="email" name="email" class="field__input" required />
+              <span class="field__error mono"></span>
+            </label>
+          </div>
+          <label class="field">
+            <span class="field__label mono">Mission Preference</span>
+            <select name="mission" class="field__input" required>
+              <option value="" disabled selected>Select a mission</option>
+              <option value="voyager-iv">Voyager IV · Interstellar</option>
+              <option value="europa-clipper">Europa Clipper · Ocean Worlds</option>
+              <option value="helios-9">Helios-9 · Solar</option>
+              <option value="ark-station">Ark Station · Mars</option>
+              <option value="skyhook">Skyhook · Asteroid Belt</option>
+              <option value="nightshade">Nightshade · Observation</option>
+              <option value="other">Other / Propose new</option>
+            </select>
+            <span class="field__error mono"></span>
+          </label>
+          <label class="field">
+            <span class="field__label mono">Message</span>
+            <textarea name="bio" class="field__input field__input--area" maxlength="500" rows="4"></textarea>
+            <span class="field__error mono"></span>
+          </label>
+          <button type="submit" class="btn btn--primary form__submit" data-magnetic data-cursor="hover">
+            Transmit →
+          </button>
+        </form>
+
+        <div class="form__success" id="formSuccess" aria-hidden="true">
+          <div class="form__success-mark mono">◆ TRANSMITTED</div>
+          <p>Заявка зафиксирована в журнале архива. Ответ — в течение 72 часов по UTC.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <div class="footer__brand">
+          <span class="footer__brand-dot"></span>
+          COSMOS<strong>ARCHIVE</strong>
+        </div>
+        <p class="footer__tagline mono">
+          EST. 1957 · 40.7128° N · 74.0060° W
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading mono">Archive</h4>
+        <a href="#missions">Missions</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#data">Records</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading mono">Mission Types</h4>
+        <a href="#">Interstellar</a>
+        <a href="#">Solar</a>
+        <a href="#">Observation</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading mono">Contact</h4>
+        <a href="#">comms@cosmos.archive</a>
+        <a href="#">437.800 MHz</a>
+        <a href="#">Deep Space Network</a>
+      </div>
+    </div>
+    <div class="footer__coords mono">
+      TRANSMISSION WINDOW · 00:00 – 23:59 UTC · SIGNAL 437.800 MHz · DSN-OPEN
+    </div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

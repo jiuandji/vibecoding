@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barista Loco — Кофейня в стиле сакуры | Мадрид</title>
+    <meta name="description" content="Barista Loco — уютная кофейня в Мадриде. Изысканный кофе, нежные десерты и атмосфера цветущей сакуры.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Падающие лепестки сакуры -->
+    <canvas id="sakura-canvas"></canvas>
+
+    <!-- Навигация -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">🌸 Barista Loco</div>
+        <div class="nav-links">
+            <a href="#menu">Меню</a>
+            <a href="#about">О нас</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#book" class="nav-cta">Заказать столик</a>
+        </div>
+        <button class="mobile-menu" id="mobile-menu-btn" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#book" class="nav-cta">Заказать столик 🌸</a>
+    </div>
+
+    <!-- Герой-секция -->
+    <header class="hero" id="hero">
+        <div class="hero-image">
+            <img src="sakura-cafe.png" alt="Кофейня Barista Loco под цветущей сакурой">
+            <div class="hero-contacts">
+                <div class="contact-item">📞 +34 912 345 678</div>
+                <div class="contact-item">📧 hola@baristaloco.es</div>
+                <div class="contact-item">📍 Calle de Alcalá, 45</div>
+                <div class="contact-item">📷 @baristaloco</div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hours-badge">
+                <span>🌸</span>
+                Открыто каждый день<br>8:00 — 22:00
+            </div>
+            <h1>Barista Loco</h1>
+            <p class="hero-location">📍 Мадрид, Испания</p>
+            <p class="hero-description">
+                Где японская эстетика встречается с душой Мадрида. 
+                Изысканный кофе, нежные десерты и атмосфера цветущей сакуры.
+            </p>
+            <div class="hero-features">
+                <span class="feature">☕ Кофе</span>
+                <span class="feature-dot">·</span>
+                <span class="feature">🍰 Десерты</span>
+                <span class="feature-dot">·</span>
+                <span class="feature">🌸 Атмосфера</span>
+            </div>
+            <a href="#book" class="btn btn-primary">Заказать столик 🌸</a>
+        </div>
+    </header>
+
+    <!-- Меню -->
+    <section class="menu-section" id="menu">
+        <div class="section-header">
+            <span class="section-petal">🌸</span>
+            <h2>Наше меню</h2>
+            <p>Лучшие рецепты с японским вдохновением</p>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Кофе -->
+            <div class="menu-card">
+                <h3>☕ Кофе</h3>
+                <ul class="menu-list">
+                    <li><span class="dish">Эспрессо</span><span class="price">€2.50</span></li>
+                    <li><span class="dish">Капучино</span><span class="price">€3.50</span></li>
+                    <li class="highlight"><span class="dish">Латте с сакурой 🌸</span><span class="price">€4.50</span></li>
+                    <li><span class="dish">Матча Латте</span><span class="price">€4.00</span></li>
+                    <li><span class="dish">Флэт Уайт</span><span class="price">€3.80</span></li>
+                </ul>
+            </div>
+
+            <!-- Десерты -->
+            <div class="menu-card">
+                <h3>🍰 Десерты</h3>
+                <ul class="menu-list">
+                    <li><span class="dish">Тирамису</span><span class="price">€5.50</span></li>
+                    <li><span class="dish">Моти с матчей</span><span class="price">€4.00</span></li>
+                    <li class="highlight"><span class="dish">Чизкейк Сакура 🌸</span><span class="price">€6.00</span></li>
+                    <li><span class="dish">Круассан</span><span class="price">€3.00</span></li>
+                    <li><span class="dish">Дайфуку</span><span class="price">€3.50</span></li>
+                </ul>
+            </div>
+
+            <!-- Напитки -->
+            <div class="menu-card">
+                <h3>🍵 Напитки</h3>
+                <ul class="menu-list">
+                    <li><span class="dish">Чай Сенча</span><span class="price">€3.00</span></li>
+                    <li><span class="dish">Горячий шоколад</span><span class="price">€4.00</span></li>
+                    <li class="highlight"><span class="dish">Лимонад Юдзу 🍋</span><span class="price">€4.50</span></li>
+                    <li><span class="dish">Смузи Манго</span><span class="price">€5.00</span></li>
+                    <li><span class="dish">Какао с маршмеллоу</span><span class="price">€4.50</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фотогалерея -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <span class="section-petal">🌸</span>
+            <h2>Галерея</h2>
+            <p>Загляните к нам — красота в каждой детали</p>
+        </div>
+
+        <div class="gallery-carousel">
+            <button class="gallery-arrow gallery-prev" aria-label="Назад">‹</button>
+            <div class="gallery-track-wrapper">
+                <div class="gallery-track" id="gallery-track">
+                    <div class="gallery-slide">
+                        <img src="gallery/1-latte.png" alt="Латте с сакурой" loading="lazy">
+                        <span class="gallery-caption">Латте с сакурой</span>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="gallery/2-mochi.png" alt="Сакура моти" loading="lazy">
+                        <span class="gallery-caption">Сакура моти</span>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="gallery/3-interior.png" alt="Наш интерьер" loading="lazy">
+                        <span class="gallery-caption">Уют в каждом уголке</span>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="gallery/4-matcha.png" alt="Матча ритуал" loading="lazy">
+                        <span class="gallery-caption">Матча ритуал</span>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="gallery/5-pastry.png" alt="Свежая выпечка" loading="lazy">
+                        <span class="gallery-caption">Свежая выпечка</span>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="gallery/6-table.png" alt="Весеннее настроение" loading="lazy">
+                        <span class="gallery-caption">Весеннее настроение</span>
+                    </div>
+                </div>
+            </div>
+            <button class="gallery-arrow gallery-next" aria-label="Вперёд">›</button>
+        </div>
+
+        <div class="gallery-dots" id="gallery-dots"></div>
+    </section>
+
+    <!-- О нас -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <div class="section-header">
+                <span class="section-petal">🌸</span>
+                <h2>О нас</h2>
+            </div>
+            <p class="about-text">
+                <strong>Barista Loco</strong> — это место, где каждая чашка кофе рассказывает историю. 
+                Мы влюблены в японскую культуру и привезли кусочек Токио в самое сердце Мадрида.
+            </p>
+            <p class="about-text">
+                Самый <em>нежный и вкусный</em> кофе — только здесь. Наши бариста обжаривают зёрна 
+                по авторским рецептам, а кондитеры каждое утро готовят свежие десерты — 
+                от классического тирамису до японских моти.
+            </p>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <span class="about-stat-number">5+</span>
+                    <span class="about-stat-label">лет в Мадриде</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-number">15</span>
+                    <span class="about-stat-label">сортов кофе</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-number">♥</span>
+                    <span class="about-stat-label">с любовью</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Бронирование -->
+    <section class="book-section" id="book">
+        <div class="section-header">
+            <span class="section-petal">🌸</span>
+            <h2>Заказать столик</h2>
+            <p>Забронируйте место в нашей уютной кофейне</p>
+        </div>
+
+        <form class="book-form" id="book-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="guest-name">Ваше имя</label>
+                    <input type="text" id="guest-name" name="name" placeholder="Как вас зовут?" required>
+                </div>
+                <div class="form-group">
+                    <label for="guest-phone">Телефон</label>
+                    <input type="tel" id="guest-phone" name="phone" placeholder="+34 ..." required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="guest-date">Дата</label>
+                    <input type="date" id="guest-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="guest-time">Время</label>
+                    <input type="time" id="guest-time" name="time" value="12:00" required>
+                </div>
+                <div class="form-group">
+                    <label for="guest-count">Гостей</label>
+                    <select id="guest-count" name="guests">
+                        <option>1</option>
+                        <option selected>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5+</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">
+                Забронировать 🌸
+            </button>
+            <p class="form-note">Подтверждение придёт на WhatsApp в течение 15 минут</p>
+        </form>
+
+        <div class="success-message" id="success-message" style="display: none;">
+            <div class="success-icon">🌸</div>
+            <h3>Столик забронирован!</h3>
+            <p>Ждём вас в Barista Loco 💕</p>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews-section" id="reviews">
+        <div class="section-header">
+            <span class="section-petal">🌸</span>
+            <h2>Отзывы гостей</h2>
+            <p>Что говорят о нас наши любимые посетители</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">
+                    «Лучший кофе в Мадриде! Латте с сакурой — просто волшебство. 
+                    Атмосфера невероятная, хочется возвращаться снова и снова.»
+                </p>
+                <div class="review-author">
+                    <div class="review-avatar">МР</div>
+                    <div>
+                        <strong>Мария Р.</strong>
+                        <span class="review-source">Google Reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">
+                    «Пришли на матчу и влюбились в это место. Дети обожают моти, 
+                    а мы — тишину и уют. Теперь это наше семейное кафе!»
+                </p>
+                <div class="review-author">
+                    <div class="review-avatar">АК</div>
+                    <div>
+                        <strong>Алехандро К.</strong>
+                        <span class="review-source">TripAdvisor</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">
+                    «Каждое утро начинаю здесь. За 3 года ни разу не разочаровали. 
+                    Рекомендую всем — лучшее место в районе!»
+                </p>
+                <div class="review-author">
+                    <div class="review-avatar">ЮС</div>
+                    <div>
+                        <strong>Юлия С.</strong>
+                        <span class="review-source">Instagram</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер / Контакты -->
+    <footer class="footer" id="contacts">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🌸 Barista Loco</h4>
+                <p>Японская эстетика.<br>Мадридская душа.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p>📞 +34 912 345 678</p>
+                <p>📧 hola@baristaloco.es</p>
+                <p>📷 @baristaloco</p>
+            </div>
+            <div class="footer-col">
+                <h4>Адрес</h4>
+                <p>📍 Calle de Alcalá, 45</p>
+                <p>Madrid, 28014</p>
+                <p>Испания</p>
+            </div>
+            <div class="footer-col">
+                <h4>Часы работы</h4>
+                <p>Каждый день</p>
+                <p class="hours-highlight">8:00 — 22:00</p>
+                <p>🌸 Всегда рады вам!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Barista Loco · Мадрид · Сделано с 🌸 и ☕</p>
+        </div>
+    </footer>
+
+    <!-- Плавающая кнопка бронирования -->
+    <a href="#book" class="floating-cta" id="floating-cta">
+        🌸 Заказать столик
+    </a>
+
+    <!-- Кнопка WhatsApp -->
+    <a href="https://wa.me/34912345678?text=Hola!%20Quiero%20reservar%20una%20mesa" 
+       target="_blank" 
+       class="whatsapp-btn" 
+       aria-label="Написать в WhatsApp">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="white">
+            <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.905 15.905 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.31 22.612c-.39 1.1-1.932 2.014-3.186 2.28-.856.182-1.974.326-5.738-1.234-4.818-1.996-7.92-6.876-8.162-7.194-.232-.318-1.952-2.6-1.952-4.958s1.234-3.516 1.672-3.996c.438-.48.958-.6 1.278-.6.318 0 .638.002.916.016.294.016.69-.112 1.078.824.39.938 1.332 3.238 1.448 3.472.116.234.194.508.038.818-.156.318-.234.514-.468.792-.234.278-.492.62-.702.832-.234.234-.478.49-.206.958.272.468 1.212 2 2.602 3.238 1.786 1.592 3.29 2.084 3.758 2.318.468.234.74.194 1.012-.116.272-.318 1.166-1.36 1.478-1.828.312-.468.624-.39 1.052-.234.428.156 2.726 1.286 3.194 1.52.468.234.78.352.896.546.116.194.116 1.128-.274 2.228z"/>
+        </svg>
+        <span class="whatsapp-tooltip">Напишите нам</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

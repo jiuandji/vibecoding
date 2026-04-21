@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pizza Fuoco — лучшая пиццерия с итальянской пиццей из дровяной печи. Доставка и самовывоз.">
+    <title>Pizza Fuoco — Пиццерия с огоньком 🔥</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-brand">🍕 Pizza Fuoco</div>
+        <div class="nav-links">
+            <a href="#menu">Меню</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#hours">Часы работы</a>
+        </div>
+        <button class="mobile-menu" id="mobile-toggle" aria-label="Меню">☰</button>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <img src="pizza-title.png" alt="Pizza Fuoco" class="hero-title-img">
+            <p class="hero-subtitle">Настоящая итальянская пицца из дровяной печи</p>
+            <div class="hero-badges">
+                <span class="badge">🔥 Дровяная печь</span>
+                <span class="badge">🧀 Свежие ингредиенты</span>
+                <span class="badge">🇮🇹 Рецепты из Неаполя</span>
+            </div>
+            <div class="hero-cta-group">
+                <a href="#book" class="cta-btn cta-blue">🪑 Заказать столик</a>
+                <a href="#takeaway" class="cta-btn cta-orange">📦 Заказать с собой</a>
+                <a href="#delivery" class="cta-btn cta-green">🛵 Доставка</a>
+            </div>
+        </div>
+        <div class="hero-flame-left"></div>
+        <div class="hero-flame-right"></div>
+    </section>
+
+    <!-- Меню -->
+    <section class="menu-section" id="menu">
+        <div class="section-header">
+            <span class="section-icon">🍕</span>
+            <h2>Наше Меню</h2>
+            <p>Каждая пицца — шедевр из дровяной печи</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-card">
+                <h3>🍕 Классика</h3>
+                <ul class="menu-list">
+                    <li><span class="dish">Маргарита</span><span class="desc">Соус, моцарелла, базилик</span><span class="price">€8</span></li>
+                    <li><span class="dish">Пепперони</span><span class="desc">Соус, моцарелла, пепперони</span><span class="price">€10</span></li>
+                    <li class="highlight"><span class="dish">Кватро Формаджи 🧀</span><span class="desc">Моцарелла, горгонзола, пармезан, рикотта</span><span class="price">€12</span></li>
+                    <li><span class="dish">Прошутто</span><span class="desc">Соус, моцарелла, ветчина, грибы</span><span class="price">€11</span></li>
+                </ul>
+            </div>
+
+            <div class="menu-card">
+                <h3>🔥 Фирменные</h3>
+                <ul class="menu-list">
+                    <li class="highlight"><span class="dish">Fuoco Special 🌶️</span><span class="desc">Соус чили, салями, халапеньо, моцарелла</span><span class="price">€14</span></li>
+                    <li><span class="dish">Тартуфо</span><span class="desc">Крем-трюфель, грибы, пармезан</span><span class="price">€16</span></li>
+                    <li><span class="dish">Дьябло</span><span class="desc">Острый соус, чоризо, перец, оливки</span><span class="price">€13</span></li>
+                    <li><span class="dish">Вулкан</span><span class="desc">Двойной сыр, бекон, лук, BBQ соус</span><span class="price">€15</span></li>
+                </ul>
+            </div>
+
+            <div class="menu-card">
+                <h3>🥤 Напитки</h3>
+                <ul class="menu-list">
+                    <li><span class="dish">Лимонад домашний</span><span class="desc">Лимон, мята, тростниковый сахар</span><span class="price">€4</span></li>
+                    <li><span class="dish">Сок свежевыжатый</span><span class="desc">Апельсин / яблоко / морковь</span><span class="price">€5</span></li>
+                    <li><span class="dish">Кола / Фанта / Спрайт</span><span class="desc">0.33 л</span><span class="price">€3</span></li>
+                    <li><span class="dish">Вода Сан Пеллегрино</span><span class="desc">Газ / без газа, 0.5 л</span><span class="price">€3</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contacts-section" id="contacts">
+        <div class="section-header">
+            <span class="section-icon">📞</span>
+            <h2>Контакты</h2>
+            <p>Звоните, пишите или приходите — мы всегда рады!</p>
+        </div>
+
+        <div class="contacts-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Телефон</h3>
+                <a href="tel:+34911234567">+34 911 234 567</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:ciao@pizzafuoco.es">ciao@pizzafuoco.es</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Адрес</h3>
+                <p>Calle Gran Vía, 28<br>Madrid, 28013</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📷</div>
+                <h3>Instagram</h3>
+                <a href="#">@pizzafuoco_madrid</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Праздники и атмосфера -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <span class="section-icon">🎉</span>
+            <h2>Праздники и атмосфера</h2>
+            <p>Отмечайте день рождения, детские праздники и просто приятные моменты вместе с нами</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="gallery/kids-birthday.png" alt="Детский день рождения" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>🎈 Детский день рождения</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/adult-party.png" alt="Праздник с друзьями" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>🥂 Праздник с друзьями</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/family-cooking.png" alt="Семейный мастер-класс" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>👨‍👩‍👧‍👦 Семейный мастер-класс</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/couple-date.png" alt="Романтический ужин" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>💑 Романтический ужин</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/kids-chefs.png" alt="Детский воркшоп" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>👩‍🍳 Детский воркшоп</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/friends-fun.png" alt="Вечер с друзьями" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>🎊 Весёлый вечер с друзьями</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Часы работы -->
+    <section class="hours-section" id="hours">
+        <div class="section-header">
+            <span class="section-icon">🕐</span>
+            <h2>Часы работы</h2>
+        </div>
+
+        <div class="hours-card">
+            <div class="hours-row">
+                <span class="day">Понедельник — Четверг</span>
+                <span class="time">11:00 — 22:00</span>
+            </div>
+            <div class="hours-row">
+                <span class="day">Пятница — Суббота</span>
+                <span class="time highlight-time">11:00 — 00:00</span>
+            </div>
+            <div class="hours-row">
+                <span class="day">Воскресенье</span>
+                <span class="time">12:00 — 21:00</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">🍕 Pizza Fuoco</div>
+            <p class="footer-tagline">Настоящий вкус Италии в сердце Мадрида</p>
+            <p class="footer-copy">© 2026 Pizza Fuoco · Madrid · Сделано с 🔥 и ❤️</p>
+        </div>
+        <div class="footer-notice">
+            🚭 В нашем ресторане запрещено курение и распитие крепких спиртных напитков.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
